@@ -30,21 +30,24 @@ Hibernate 6) sur Tomcat 10.1.
   respectant le principe SOLID (ségrégation d'interface, inversion de dépendances)
 
 ## 📂 Arborescence
+
+```text
 GestionCommandes/
-├── docs/ Diagramme UML (PlantUML + PNG)
-├── sql/ Script de création de la base
+├── docs/                       Diagramme UML (PlantUML + PNG)
+├── sql/                        Script de création de la base
 ├── src/main/java/ma/fstt/
-│ ├── entities/ 4 entités JPA
-│ ├── dao/ 4 DAO (JPA)
-│ ├── service/ interfaces + implémentations
-│ └── web/ 3 Servlets (Client, Produit, Commande)
+│   ├── entities/               4 entités JPA
+│   ├── dao/                    4 DAO (JPA)
+│   ├── service/                interfaces + implémentations
+│   └── web/                    3 Servlets (Client, Produit, Commande)
 ├── src/main/resources/META-INF/persistence.xml
 └── src/main/webapp/
-├── index.jsp
-├── css/style.css
-└── WEB-INF/
-├── web.xml
-└── views/ 7 JSP
+    ├── index.jsp
+    ├── css/style.css
+    └── WEB-INF/
+        ├── web.xml
+        └── views/              7 JSP
+```
 
 ## 🚀 Lancement local
 
@@ -59,7 +62,7 @@ GestionCommandes/
 
 ```bash
 # 1. Cloner
-git clone https://github.com/<ton-user>/GestionCommandes.git
+git clone https://github.com/Tommy-indray/GestionCommandes.git
 cd GestionCommandes
 
 # 2. Créer la base
@@ -74,13 +77,17 @@ mvn clean package
 # 5. Déployer sur Tomcat 10.1
 sudo cp target/GestionCommandes.war /var/lib/tomcat10/webapps/
 sudo systemctl restart tomcat10
+```
 
+### Accès
 
-## Accès
+```text
 http://localhost:8080/GestionCommandes/
+```
 
-## Fonctionnalités
-Clients : CRUD complet (créer, lister, modifier, supprimer)
-Produits : CRUD complet + gestion du stock
-Commandes : création avec lignes, calcul automatique du total,
-décrémentation du stock, suppression en cascade
+## ✅ Fonctionnalités
+
+- **Clients** : CRUD complet (créer, lister, modifier, supprimer)
+- **Produits** : CRUD complet + gestion du stock
+- **Commandes** : création avec lignes, calcul automatique du total,
+  décrémentation du stock, suppression en cascade
